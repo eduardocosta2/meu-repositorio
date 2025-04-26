@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Pra Rayssa :)</title>
+    <script>
+        function mostrarMensagem() {
+          
+            const overlay = document.createElement('div');
+            overlay.style.position = 'fixed';
+            overlay.style.top = '0';
+            overlay.style.left = '0';
+            overlay.style.width = '100%';
+            overlay.style.height = '100%';
+            overlay.style.background = 'rgba(0,0,0,0.7)';
+            overlay.style.display = 'flex';
+            overlay.style.alignItems = 'center';
+            overlay.style.justifyContent = 'center';
+            overlay.style.zIndex = '999';
+            overlay.style.animation = 'fadeIn 0.5s forwards';
+
+           
+            const popup = document.createElement('div');
+            popup.innerHTML = "<h2 style='color: #ff85a2; margin-bottom: 10px;'>Hey Rayssa! ✨</h2><p style='color: white;'>Só queria dizer que você é uma pessoa incrível! Continue brilhando! 🌟<br><br><em>— Eduardo 😎</em></p>";
+            popup.style.background = '#333';
+            popup.style.padding = '30px';
+            popup.style.borderRadius = '20px';
+            popup.style.textAlign = 'center';
+            popup.style.maxWidth = '300px';
+            popup.style.boxShadow = '0 0 20px #ff85a2';
+            popup.style.animation = 'zoomIn 0.5s forwards';
+
+            overlay.appendChild(popup);
+            document.body.appendChild(overlay);
+
+           
+            overlay.onclick = function() {
+                overlay.style.animation = 'fadeOut 0.5s forwards';
+                setTimeout(() => document.body.removeChild(overlay), 500);
+            };
+        }
+
+        function tocarMusica() {
+            var audio = new Audio('');
+            audio.loop = true; 
+            audio.play();
+        }
+    </script>
+</head>
+<body style="margin: 0; overflow: hidden; font-family: 'Poppins', sans-serif; background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb); background-size: 400% 400%; animation: gradientBG 15s ease infinite;">
+
+    <div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: white; padding: 20px;">
+        
+        <h1 style="font-size: 48px; margin-bottom: 20px; animation: fadeSlideDown 2s ease forwards;">E aí, Rayssa! 😎</h1>
+        
+        <p style="font-size: 22px; max-width: 600px; margin-bottom: 40px; background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 20px; backdrop-filter: blur(5px); animation: fadeSlideUp 2s ease forwards;">
+            Passando aqui rapidinho só pra dizer que você é uma pessoa diferente de um jeito muito massa! ✨<br><br>
+            Continue sendo essa pessoa top! 🚀
+        </p>
+
+        <button onclick="mostrarMensagem(); tocarMusica();" style="padding: 15px 30px; font-size: 20px; border: none; border-radius: 50px; background: #ff85a2; color: white; cursor: pointer; box-shadow: 0 0 10px #ff85a2, 0 0 20px #ff85a2, 0 0 30px #ff85a2; transition: 0.3s;">
+            Me clica aí 😁
+        </button>
+
+    </div>
+
+    <style>
+    
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes fadeSlideDown {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeSlideUp {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #ff6491, 0 0 30px #ff6491, 0 0 40px #ff6491;
+        }
+    </style>
+
+</body>
+</html>
